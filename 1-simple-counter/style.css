@@ -1,0 +1,49 @@
+:root{
+    --first:#1824a6;
+    --second:#8278d9;
+    --concolor:#ececea;
+}
+
+body{
+    background:linear-gradient(135deg,var(--first),var(--second));
+    padding: 0;
+    margin: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container{
+text-align: center;
+background-color:var(--concolor);
+padding: 20px;
+height: 200px;
+border-radius: 5px;
+}
+
+.demo{
+    color:var(--first);
+    font-size: 100px;
+    font-weight: 500;
+}
+
+.btn{
+    width: 100px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    margin: 5px;
+    padding: 5px;
+    background-color:var(--second);
+    border-radius: 3px;
+    border:var(--second) solid;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: var(--first);
+    border:var(--first) solid ;
+    color:var(--concolor)
+}
+
