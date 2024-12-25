@@ -1,0 +1,62 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+    :root{
+        --first:#1824a6;
+        --second:#8278d9;
+        --concolor:#ececea;
+    }
+    
+    body{
+        background:linear-gradient(135deg,var(--first),var(--second));
+        padding: 0;
+        margin: 0;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .container{
+        background-color: var(--concolor);
+        height: 500px;
+        width: 700px;
+        text-align: center;
+    }
+
+    input{
+        font-size: 17px;
+        width:100px;
+        font-weight:700; 
+    }
+
+    button{
+        font-size: 17px;
+        width: 100px;
+        padding: 7px; 
+        font-weight:700; 
+        background-color: var(--first);
+        color:var(--concolor);
+        border:none;
+        border-radius: 5px;
+
+    }
+    
+    button:hover{
+        background-color: var(--second);
+    }
+    
+    button:active{
+        background-color: var(--second);
+    }
+    #diceNumber{
+        margin-top: 10px;
+        margin-bottom: 50px;
+        font-size: 20px;
+        font-weight:700;   
+    }
+    
+    img{
+        width:100px;
+        height: 100px;
+    }
