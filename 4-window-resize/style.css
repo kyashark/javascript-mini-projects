@@ -1,0 +1,33 @@
+*{
+    margin:0;
+    padding:0;
+    
+}
+
+:root{
+    --first:#1824a6;
+    --second:#8278d9;
+    --concolor:#ececea;
+}
+
+body{
+    background:linear-gradient(135deg,var(--first),var(--second));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.conatiner{
+    background-color: #ececea;
+    width:200px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color:#635994;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 20px;
+}
