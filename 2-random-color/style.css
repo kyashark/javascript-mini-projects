@@ -1,16 +1,32 @@
-
-body{
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
+:root {
+  --primary: #1824a6;
+  --secondary: #8278d9;
+  --accent: #ececea;
 }
 
-.box{
-    background-color: red;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: var(--accent);
+  padding: 20px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.box {
+  background-color: white;
+  width: 500px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
