@@ -1,49 +1,48 @@
-:root{
-    --first:#1824a6;
-    --second:#8278d9;
-    --concolor:#ececea;
+:root {
+  --primary: #1824a6;
+  --secondary: #8278d9;
+  --accent: #ececea;
 }
 
-body{
-    background:linear-gradient(135deg,var(--first),var(--second));
-    padding: 0;
-    margin: 0;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+body {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.container{
-text-align: center;
-background-color:var(--concolor);
-padding: 20px;
-height: 200px;
-border-radius: 5px;
+.container {
+  text-align: center;
+  background-color: var(--accent);
+  padding: 20px;
+  height: 200px;
+  border-radius: 5px;
 }
 
-.demo{
-    color:var(--first);
-    font-size: 100px;
-    font-weight: 500;
+.demo {
+  color: var(--first);
+  font-size: 100px;
+  font-weight: 500;
 }
 
-.btn{
-    width: 100px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: 500;
-    margin: 5px;
-    padding: 5px;
-    background-color:var(--second);
-    border-radius: 3px;
-    border:var(--second) solid;
-    transition: 0.1s;
-    cursor: pointer;
+.btn {
+  width: 100px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 500;
+  margin: 5px;
+  padding: 5px;
+  background-color: var(--second);
+  border-radius: 3px;
+  border: var(--second) solid;
+  transition: 0.1s;
+  cursor: pointer;
 }
 
-.btn:hover{
-    background-color: var(--first);
-    border:var(--first) solid ;
-    color:var(--concolor)
+.btn:hover {
+  background-color: var(--first);
+  border: var(--first) solid;
+  color: var(--concolor);
 }
-
