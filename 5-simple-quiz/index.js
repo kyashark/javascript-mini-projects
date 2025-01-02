@@ -29,107 +29,86 @@ const questions = [
     }
 ];
 
-document.getElementById('start-btn').addEventListener('click', startQuiz);
-document.getElementById('next-btn').addEventListener('click', showNextQuestion);
-document.getElementById('restart-btn').addEventListener('click',restartQuiz);
 
+
+const startContainer = document.querySelector('.start.container');
+const quizContainer = document.querySelector('.quiz.container');
+const scoreContainer = document.querySelector('.score.container');
 
 const questionElement = document.getElementById('question');
-const answerElement = document.getElementById('answers');
-const scoreElement = document.getElementById('score');
-const scoreSpan = document.getElementById('score');
+const answersElement = document.getElementById('answers')
+const NextButton = document.getElementById("next-btn");
+const scoreSpan = document.getElementById("score");
+
+
 
 
 let currentQuestionIndex = 0;
 let score = 0;
 
-
 function startQuiz(){
-    document.querySelector('.start-container').style.display = 'none'
-    document.querySelector('.score-container').style.display = 'none'; 
-    document.querySelector('.quiz-container').style.display = 'block'; 
-    currentQuestionIndex = 0;
-    score = 0;
-    showQuestion();    
+    startContainer.style.display="none";
+    quizContainer.style.display="block"
+    showQuestion();
 }
-
 
 function showQuestion(){
     let currentQuestion = questions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex+1;
-    questionElement.innerHTML = questionNo + "." + currentQuestion.question;
-    
-    answerElement.innerHTML = '';
+    let currentQuestionNo = currentQuestionIndex+1;
+    questionElement.innerHTML = currentQuestionNo + ". " + currentQuestion.question;
 
-    currentQuestion.answer.forEach(answer => {
-                const button = document.createElement('button');
-                button.innerHTML = answer.text;
-                button.classList.add("answer-btn");
-                button.addEventListener('click', () => selectAnswer(button,answer));
-                answerElement.appendChild(button);
-    });
+    answersElement.innerHTML="";
+    
+    currentQuestion.answer.forEach(answer =>{
+        const button = document.createElement('button');
+        button.innerHTML = answer.text;
+        button.classList.add("answer-btn");
+        button.dataset.correct = answer.correct;
+        button.addEventListener('click', () => selectAnswer(button));
+        answersElement.append(button);
+    })
 }
 
-function selectAnswer(button, answer){
-
+function selectAnswer(button){
     if(!button.classList.contains('selected')){
         const buttons = document.querySelectorAll('.answer-btn');
-    buttons.forEach(btn => btn.classList.remove('selected'));
+        buttons.forEach(btn => btn.classList.remove('selected'));
         button.classList.add('selected');
-        if (answer.correct) {
-            score++;
-        }
-        console.log(score);
-    }  
+    }
 }
 
-function showNextQuestion(){ 
+function showNextQuestion(){
+    checkAnswer();
     currentQuestionIndex++;
-            if (currentQuestionIndex < questions.length) {
-                showQuestion();
-                
-            } else {
-                showScore();
-            }
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+        
+    } else {
+        showScore();
+    }
 }
 
+function checkAnswer(){
+    const selectedButton = document.querySelector('.answer-btn.selected');
+    if (selectedButton && selectedButton.dataset.correct === 'true') {
+        score++;
+        console.log(score);
+    }
+}
 
 function showScore(){
-    document.querySelector('.quiz-container').style.display = 'none'; 
-    document.querySelector('.score-container').style.display = 'flex';
-    scoreSpan.innerHTML = score;   
+    quizContainer.style.display = 'none'; 
+    scoreContainer.style.display = 'flex';
+    scoreSpan.innerHTML = score;
 }
-
 
 function restartQuiz(){
-    document.querySelector('.start-container').style.display = 'flex';
-    document.querySelector('.score-container').style.display = 'none'; 
+    startContainer.style.display='flex';
+    scoreContainer.style.display='none';
     currentQuestionIndex = 0;
-    score = 0;  
-    showQuestion(); 
+    score = 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+document.getElementById('start-btn').addEventListener('click', startQuiz);
+document.getElementById('next-btn').addEventListener('click',showNextQuestion);
+document.getElementById('restart-btn').addEventListener('click',restartQuiz);

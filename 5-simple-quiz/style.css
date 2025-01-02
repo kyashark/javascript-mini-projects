@@ -32,30 +32,26 @@ h1{
 }
 
 
-.start-container{
+.container{
     width: 500px;
     height: 450px;
     background-color:#ffffff;
     padding: 20px; 
     border-radius: 4px;
+}
+
+.start{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.quiz-container{
-    width: 500px;
-    height: 450px;
-    background-color:#ffffff;
-    padding: 20px; 
-    border-radius: 4px;
+.quiz{
+    display: none;
 }
 
-.score-container{
-    width: 500px;
-    height: 450px;
-    background-color:#ffffff;
-    padding: 20px; 
+.score{
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -144,5 +140,9 @@ h1{
 }
 
 
-
+.score p{
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
 
